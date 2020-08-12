@@ -1,4 +1,5 @@
 import torch.nn as nn
+from fashion_trainer.constants import NUMBER_OF_CLASSES
 
 
 class FashionCNN(nn.Module):
@@ -20,7 +21,7 @@ class FashionCNN(nn.Module):
         self.fc1 = nn.Linear(in_features=64 * 6 * 6, out_features=600)
         self.drop = nn.Dropout2d(0.25)
         self.fc2 = nn.Linear(in_features=600, out_features=120)
-        self.fc3 = nn.Linear(in_features=120, out_features=10)
+        self.fc3 = nn.Linear(in_features=120, out_features=NUMBER_OF_CLASSES)
 
     def forward(self, x):
         out = self.layer1(x)
