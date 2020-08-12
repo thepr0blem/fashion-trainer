@@ -34,7 +34,7 @@ def main():
     learning_rate = 0.001
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-    num_epochs = 2
+    num_epochs = 20
     count = 0
 
     # Lists for visualization of loss and accuracy
@@ -46,7 +46,8 @@ def main():
     predictions_list = []
     labels_list = []
 
-    for _ in range(num_epochs):
+    for epoch in range(num_epochs):
+        print(f"Epoch -- {epoch + 1} --")
         for images, labels in train_loader:
             # Transfering images and labels to GPU if available
             images, labels = images.to(device), labels.to(device)
