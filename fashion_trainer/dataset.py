@@ -17,7 +17,7 @@ class FashionDataset(Dataset):
             image.append(item[1:])
 
         self.labels = np.asarray(label)
-        self.images = np.asarray(image).reshape(-1, 28, 28, 1).astype("float32")
+        self.images = np.asarray(image).reshape((-1, 28, 28, 1)).astype("float32")
 
     def __getitem__(self, index):
         label = self.labels[index]
