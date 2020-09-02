@@ -12,7 +12,6 @@ def plot_accuracy(iterations: List, accuracies: List):
 
 
 def plot_metric(iterations: List, metric: List, metric_name: str):
-
     plt.plot(iterations, metric)
     plt.xlabel("No. of Iteration")
     plt.ylabel(metric_name)

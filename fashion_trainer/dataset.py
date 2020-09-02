@@ -1,10 +1,16 @@
+from typing import Optional
+
 import numpy as np
+import pandas as pd
 import torch
+import torchvision.transforms as transforms
 from torch.utils.data import Dataset
 
 
 class FashionDataset(Dataset):
-    def __init__(self, data, transform=None):
+    def __init__(
+        self, data: pd.DataFrame, transform: Optional[transforms.Compose] = None
+    ):
 
         self.fashion_MNIST = list(data.values)
         self.transform = transform
@@ -32,7 +38,7 @@ class FashionDataset(Dataset):
         return len(self.images)
 
 
-def output_label(label):
+def get_label_name(label):
     output_mapping = {
         0: "T-shirt/Top",
         1: "Trouser",
