@@ -1,10 +1,10 @@
-from typing import Optional
+from typing import Optional, Union
 
 import numpy as np
 import pandas as pd
 import torch
-import torchvision.transforms as transforms
 from torch.utils.data import Dataset
+import torchvision.transforms as transforms
 
 
 class FashionDataset(Dataset):
@@ -38,7 +38,7 @@ class FashionDataset(Dataset):
         return len(self.images)
 
 
-def get_label_name(label):
+def get_label_name(label: Union[int, torch.Tensor]) -> str:
     output_mapping = {
         0: "T-shirt/Top",
         1: "Trouser",
@@ -51,5 +51,6 @@ def get_label_name(label):
         8: "Bag",
         9: "Ankle Boot",
     }
-    label = label.item() if type(label) == torch.Tensor else label
+    if isinstance(label, torch.Tensor):
+        label = label.item()
     return output_mapping[label]

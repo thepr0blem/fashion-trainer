@@ -3,18 +3,23 @@ from typing import List
 import matplotlib.pyplot as plt
 
 
-def plot_loss(iterations: List, losses: List):
-    plot_metric(iterations=iterations, metric=losses, metric_name="Loss")
-
-
-def plot_accuracy(iterations: List, accuracies: List):
-    plot_metric(iterations=iterations, metric=accuracies, metric_name="Accuracy [%]")
-
-
-def plot_metric(iterations: List, metric: List, metric_name: str):
-    plt.plot(iterations, metric)
+def save_loss_plot(iterations: List, losses: List) -> None:
+    plt.plot(iterations, losses)
     plt.xlabel("No. of Iteration")
-    plt.ylabel(metric_name)
-    plt.title(f"Iterations vs {metric_name}")
-    plt.savefig(f"figures/{metric_name.lower()}.png")
+    plt.ylabel("Loss")
+    plt.title("Iterations vs Loss")
+    plt.savefig("figures/loss.png")
+    plt.clf()
+
+
+def save_accuracy_plot(
+    train_accuracy: List, test_accuracy: List, iterations: List,
+) -> None:
+    plt.plot(iterations, train_accuracy)
+    plt.plot(iterations, test_accuracy)
+    plt.xlabel("No. of Iteration")
+    plt.ylabel("Accuracy [%]")
+    plt.legend(["train", "val"], loc="upper left")
+    plt.title("Accuracy")
+    plt.savefig("figures/accuracy.png")
     plt.clf()
