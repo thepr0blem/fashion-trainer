@@ -1,15 +1,15 @@
 from typing import Dict, List
 
+import pandas as pd
+import torch
+import torch.nn as nn
+import torchvision.transforms as transforms
 from fashion_trainer import plot
 from fashion_trainer.constants import IMAGE_SIZE, NUMBER_OF_CLASSES
 from fashion_trainer.dataset import FashionDataset, get_label_name
 from fashion_trainer.model import FashionCNN
-import pandas as pd
-import torch
 from torch.autograd import Variable
-import torch.nn as nn
 from torch.utils.data import DataLoader
-import torchvision.transforms as transforms
 
 
 class Trainer:

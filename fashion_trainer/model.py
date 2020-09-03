@@ -1,6 +1,6 @@
-from fashion_trainer.constants import NUMBER_OF_CLASSES
 import torch
 import torch.nn as nn
+from fashion_trainer.constants import NUMBER_OF_CLASSES
 
 
 class FashionCNN(nn.Module):
