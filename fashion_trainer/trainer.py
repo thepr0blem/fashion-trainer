@@ -17,9 +17,9 @@ class Trainer:
         self,
         train_csv: str,
         test_csv: str,
-        learning_rate: float = 0.001,
-        num_epochs: int = 3,
-        batch_size: int = 100,
+        learning_rate: float,
+        num_epochs: int,
+        batch_size: int,
     ):
         self.train_loader = self._get_data_loader(
             data_csv=train_csv, batch_size=batch_size
@@ -48,7 +48,6 @@ class Trainer:
         print("Training finished")
 
         self.save_training_metric_plots()
-        self.print_per_class_accuracy()
 
     def print_per_class_accuracy(self) -> None:
         class_correct = NUMBER_OF_CLASSES * [0.0]
