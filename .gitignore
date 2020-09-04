@@ -45,16 +45,7 @@ nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
-.hypothesis/
 .pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Flask stuff:
-instance/
-.webassets-cache
 
 # Jupyter Notebook
 .ipynb_checkpoints
