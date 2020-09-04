@@ -5,6 +5,7 @@ Source data: [Kaggle - Fashion MNIST](https://www.kaggle.com/zalando-research/fa
 Run with:
 ```bash
 >> poetry install
+>> bash data/download_data.sh
 >> poetry run fashion-trainer
 ```
 
