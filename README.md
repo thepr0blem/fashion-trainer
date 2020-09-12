@@ -10,7 +10,7 @@ Run with:
 ```
 
 
-```bash
+```
 NAME
     fashion-trainer - Train CNN for image classification.
 
